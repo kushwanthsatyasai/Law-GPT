@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  db:
+    image: ankane/pgvector:latest
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-lawgpt}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lawgpt}
+      POSTGRES_DB: ${POSTGRES_DB:-lawgpt}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    depends_on:
+      - db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-lawgpt}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lawgpt}
+      POSTGRES_DB: ${POSTGRES_DB:-lawgpt}
+      POSTGRES_HOST: ${POSTGRES_HOST:-db}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      SECRET_KEY: ${SECRET_KEY:-dev_secret}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-60}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      STORAGE_DIR: ${STORAGE_DIR:-/data/uploads}
+      APP_ENV: ${APP_ENV:-dev}
+    volumes:
+      - uploads:${STORAGE_DIR:-/data/uploads}
+      - ./sample_data:/app/sample_data
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    working_dir: /app
+    command: ["npm", "run", "dev", "--", "--port", "3000", "--host", "0.0.0.0"]
+    environment:
+      NEXT_PUBLIC_API_BASE: ${NEXT_PUBLIC_API_BASE:-http://localhost:8000}
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
+  uploads:
