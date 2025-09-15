@@ -20,12 +20,20 @@ const Login: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
-      if (!res.ok) throw new Error(await res.text());
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.detail || 'Login failed');
+      }
       const data = await res.json();
       localStorage.setItem('token', data.access_token);
+      
+      // Store user email for immediate use
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('userName', email.split('@')[0].replace(/^\w/, c => c.toUpperCase()));
+      
       navigate('/dashboard');
     } catch (err: any) {
-      setError('Login failed');
+      setError(err.message || 'Login failed');
     } finally {
       setLoading(false);
     }

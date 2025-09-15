@@ -7,6 +7,9 @@ import Register from './screens/Register';
 import Dashboard from './screens/Dashboard';
 import Profile from './screens/Profile';
 import UploadDoc from './screens/UploadDoc';
+import DocumentAnalysis from './screens/DocumentAnalysis';
+import ChatInterface from './screens/ChatInterface';
+import IndianLegalResearch from './screens/IndianLegalResearch';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -19,6 +22,10 @@ const router = createBrowserRouter([
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'profile', element: <Profile /> },
       { path: 'upload', element: <UploadDoc /> },
+      { path: 'document-analysis/:documentId', element: <DocumentAnalysis /> },
+      { path: 'chat', element: <ChatInterface /> },
+      { path: 'chat/:sessionId', element: <ChatInterface /> },
+      { path: 'indian-legal-research', element: <IndianLegalResearch /> },
     ],
   },
 ]);

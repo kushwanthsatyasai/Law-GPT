@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Law-GPT Profile</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #38e07b;
+        --secondary-color: #2a9d5a;
+        --background-color: #1a1a1a;
+        --text-primary: #e0e0e0;
+        --text-secondary: #a0a0a0;
+        --accent-color: #4ade80;
+      }
+      body {
+        font-family: 'Spline Sans', sans-serif;
+      }
+      .sidebar-item:hover {
+        background-color: var(--secondary-color);
+      }
+      .settings-item:hover {
+        background-color: #2c3e50;
+      }
+    </style>
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary)]">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<div class="flex h-full grow flex-col">
+<div class="flex flex-1">
+<aside class="flex w-64 flex-col bg-gray-900 p-4">
+<div class="mb-8 flex items-center gap-2">
+<svg class="text-[var(--primary-color)]" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<h1 class="text-xl font-bold text-white">LegalAI</h1>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="sidebar-item flex items-center gap-3 rounded-md px-3 py-2 text-[var(--text-secondary)] transition-colors" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span>Home</span>
+</a>
+<a class="sidebar-item flex items-center gap-3 rounded-md px-3 py-2 text-[var(--text-secondary)] transition-colors" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+</svg>
+<span>Chat</span>
+</a>
+<a class="sidebar-item flex items-center gap-3 rounded-md px-3 py-2 text-[var(--text-secondary)] transition-colors" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+<span>Documents</span>
+</a>
+<a class="sidebar-item flex items-center gap-3 rounded-md px-3 py-2 text-[var(--text-secondary)] transition-colors" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+<span>Profile</span>
+</a>
+<a class="sidebar-item flex items-center gap-3 rounded-md bg-[var(--secondary-color)] px-3 py-2 text-white transition-colors" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-2">
+<a class="sidebar-item flex items-center gap-3 rounded-md px-3 py-2 text-[var(--text-secondary)] transition-colors" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+<span>Upgrade</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<header class="mb-8">
+<h1 class="text-4xl font-bold text-white">Settings</h1>
+</header>
+<div class="space-y-12">
+<div>
+<h2 class="mb-4 text-2xl font-semibold text-white">Account</h2>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<div class="settings-item flex cursor-pointer items-center gap-4 rounded-lg bg-gray-800 p-4 transition-colors">
+<div class="flex size-12 items-center justify-center rounded-lg bg-[var(--secondary-color)]">
+<svg class="text-white" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+<div>
+<p class="font-medium text-white">Account Details</p>
+<p class="text-[var(--text-secondary)]">Manage your account details</p>
+</div>
+</div>
+<div class="settings-item flex cursor-pointer items-center gap-4 rounded-lg bg-gray-800 p-4 transition-colors">
+<div class="flex size-12 items-center justify-center rounded-lg bg-[var(--secondary-color)]">
+<svg class="text-white" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+<path d="M2 11h20"></path>
+</svg>
+</div>
+<div>
+<p class="font-medium text-white">Subscription</p>
+<p class="text-[var(--text-secondary)]">Manage your subscription plan</p>
+</div>
+</div>
+<div class="settings-item flex cursor-pointer items-center gap-4 rounded-lg bg-gray-800 p-4 transition-colors">
+<div class="flex size-12 items-center justify-center rounded-lg bg-[var(--secondary-color)]">
+<svg class="text-white" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+<path d="M2 11h20"></path>
+</svg>
+</div>
+<div>
+<p class="font-medium text-white">Payment Methods</p>
+<p class="text-[var(--text-secondary)]">Manage your payment methods</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="mb-4 text-2xl font-semibold text-white">Application</h2>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<div class="settings-item flex cursor-pointer items-center gap-4 rounded-lg bg-gray-800 p-4 transition-colors">
+<div class="flex size-12 items-center justify-center rounded-lg bg-[var(--secondary-color)]">
+<svg class="text-white" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</div>
+<div>
+<p class="font-medium text-white">Application Settings</p>
+<p class="text-[var(--text-secondary)]">Manage your application settings</p>
+</div>
+</div>
+<div class="settings-item flex cursor-pointer items-center gap-4 rounded-lg bg-gray-800 p-4 transition-colors">
+<div class="flex size-12 items-center justify-center rounded-lg bg-[var(--secondary-color)]">
+<svg class="text-white" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<div>
+<p class="font-medium text-white">Past Queries</p>
+<p class="text-[var(--text-secondary)]">View your past legal queries</p>
+</div>
+</div>
+<div class="settings-item flex cursor-pointer items-center gap-4 rounded-lg bg-gray-800 p-4 transition-colors">
+<div class="flex size-12 items-center justify-center rounded-lg bg-[var(--secondary-color)]">
+<svg class="text-white" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+</div>
+<div>
+<p class="font-medium text-white">Notifications</p>
+<p class="text-[var(--text-secondary)]">Manage your notification preferences</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="mb-4 text-2xl font-semibold text-white">Support</h2>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<div class="settings-item flex cursor-pointer items-center gap-4 rounded-lg bg-gray-800 p-4 transition-colors">
+<div class="flex size-12 items-center justify-center rounded-lg bg-[var(--secondary-color)]">
+<svg class="text-white" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+<line x1="12" x2="12.01" y1="17" y2="17"></line>
+</svg>
+</div>
+<div>
+<p class="font-medium text-white">Help &amp; Support</p>
+<p class="text-[var(--text-secondary)]">Get help and support</p>
+</div>
+</div>
+<div class="settings-item flex cursor-pointer items-center gap-4 rounded-lg bg-gray-800 p-4 transition-colors">
+<div class="flex size-12 items-center justify-center rounded-lg bg-[var(--secondary-color)]">
+<svg class="text-white" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="16" y2="12"></line>
+<line x1="12" x2="12.01" y1="8" y2="8"></line>
+</svg>
+</div>
+<div>
+<p class="font-medium text-white">About LegalAI</p>
+<p class="text-[var(--text-secondary)]">Learn more about LegalAI</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<button class="flex items-center gap-3 rounded-lg px-4 py-3 text-red-500 transition-colors hover:bg-red-500/10">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+<polyline points="16 17 21 12 16 7"></polyline>
+<line x1="21" x2="9" y1="12" y2="12"></line>
+</svg>
+<span class="font-medium">Log Out</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+
+</body></html>
