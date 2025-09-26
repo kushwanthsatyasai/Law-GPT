@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: law-gpt-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    region: oregon
+    branch: main
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: APP_ENV
+        value: production
+      - key: STORAGE_DIR
+        value: /data/uploads
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 60
+      # Add your API keys in Render dashboard
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: INDIAN_KANOON_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: SCC_ONLINE_API_KEY
+        sync: false
+      - key: KANOON_DEV_API_KEY
+        sync: false
+
+  - type: pserv
+    name: law-gpt-database
+    plan: free
+    region: oregon
+    databaseName: lawgpt
+    databaseUser: lawgpt
