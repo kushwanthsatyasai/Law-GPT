@@ -16,16 +16,34 @@ services:
     depends_on:
       - db
     environment:
+      # Database Configuration
+      DATABASE_URL: ${DATABASE_URL:-postgresql://lawgpt:lawgpt@db:5432/lawgpt}
       POSTGRES_USER: ${POSTGRES_USER:-lawgpt}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lawgpt}
       POSTGRES_DB: ${POSTGRES_DB:-lawgpt}
       POSTGRES_HOST: ${POSTGRES_HOST:-db}
       POSTGRES_PORT: ${POSTGRES_PORT:-5432}
-      SECRET_KEY: ${SECRET_KEY:-dev_secret}
+      
+      # Security
+      SECRET_KEY: ${SECRET_KEY:-dev_secret_change_in_production}
       ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-60}
+      
+      # AI API Keys
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
+      
+      # Indian Legal Database API Keys
+      INDIAN_KANOON_API_KEY: ${INDIAN_KANOON_API_KEY}
+      SCC_ONLINE_API_KEY: ${SCC_ONLINE_API_KEY}
+      KANOON_DEV_API_KEY: ${KANOON_DEV_API_KEY}
+      
+      # Other Legal Database API Keys
+      CANLII_API_KEY: ${CANLII_API_KEY}
+      OPEN_LAW_API_KEY: ${OPEN_LAW_API_KEY}
+      
+      # Application Configuration
       STORAGE_DIR: ${STORAGE_DIR:-/data/uploads}
-      APP_ENV: ${APP_ENV:-dev}
+      APP_ENV: ${APP_ENV:-production}
     volumes:
       - uploads:${STORAGE_DIR:-/data/uploads}
       - ./sample_data:/app/sample_data
@@ -36,15 +54,28 @@ services:
   frontend:
     build: ./frontend
     working_dir: /app
-    command: ["npm", "run", "dev", "--", "--port", "3000", "--host", "0.0.0.0"]
+    command: ["sh", "-c", "npm run build && npm run preview -- --port 3000 --host 0.0.0.0"]
     environment:
-      NEXT_PUBLIC_API_BASE: ${NEXT_PUBLIC_API_BASE:-http://localhost:8000}
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8000}
+      NODE_ENV: production
     volumes:
       - ./frontend:/app
       - /app/node_modules
     ports:
       - "3000:3000"
     depends_on:
+      - backend
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - frontend
       - backend
 
 volumes:

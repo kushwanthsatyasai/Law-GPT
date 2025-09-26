@@ -15,8 +15,18 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "replace_me"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
+    # AI API Keys
     OPENAI_API_KEY: str | None = None
     GOOGLE_API_KEY: str | None = None
+
+    # Indian Legal Database API Keys
+    INDIAN_KANOON_API_KEY: str | None = None
+    SCC_ONLINE_API_KEY: str | None = None
+    KANOON_DEV_API_KEY: str | None = None
+
+    # Other Legal Database API Keys
+    CANLII_API_KEY: str | None = None
+    OPEN_LAW_API_KEY: str | None = None
 
     STORAGE_DIR: str = "uploads"
     APP_ENV: str = "dev"

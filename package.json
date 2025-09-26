@@ -1,0 +1,20 @@
+{
+  "name": "law-gpt-netlify",
+  "version": "1.0.0",
+  "description": "Law-GPT application with Netlify Functions",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd frontend && npm ci && npm run build",
+    "dev": "netlify dev",
+    "deploy": "netlify deploy",
+    "deploy:prod": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "@netlify/functions": "^2.6.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.10.1",
+    "typescript": "^5.3.0",
+    "@types/node": "^20.10.0"
+  }
+}

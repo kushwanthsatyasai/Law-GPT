@@ -2,7 +2,9 @@ from fastapi import FastAPI, UploadFile, File, Depends, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import BackgroundTasks
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 from typing import List
+from datetime import datetime
 import os
 import google.generativeai as genai
 from .config import settings
@@ -37,7 +39,34 @@ os.makedirs(settings.STORAGE_DIR, exist_ok=True)
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    """Basic health check endpoint"""
+    return {"status": "ok", "timestamp": datetime.now().isoformat()}
+
+@app.get("/health/detailed")
+def health_detailed(db: Session = Depends(get_db)):
+    """Detailed health check with database and API connectivity"""
+    try:
+        # Check database connection
+        db.execute(text("SELECT 1"))
+        db_status = "healthy"
+    except Exception as e:
+        db_status = f"unhealthy: {str(e)}"
+    
+    # Check API keys
+    api_keys_status = {
+        "google_api_key": bool(settings.GOOGLE_API_KEY),
+        "indian_kanoon_api_key": bool(settings.INDIAN_KANOON_API_KEY),
+        "openai_api_key": bool(settings.OPENAI_API_KEY)
+    }
+    
+    return {
+        "status": "ok" if db_status == "healthy" else "degraded",
+        "timestamp": datetime.now().isoformat(),
+        "database": db_status,
+        "api_keys": api_keys_status,
+        "storage_dir": settings.STORAGE_DIR,
+        "app_env": settings.APP_ENV
+    }
 
 
 @app.post("/register", response_model=TokenResponse)

@@ -1,6 +1,33 @@
 # Law-GPT
 
-A legal assistant application powered by AI that helps with legal document analysis and question answering.
+A comprehensive legal research and document analysis platform powered by AI, designed specifically for Indian legal professionals and researchers.
+
+🚀 **Now with full Indian Kanoon API integration and production-ready Docker deployment!**
+
+## ⚡ Quick Production Deployment
+
+Deploy Law-GPT as a production website in minutes:
+
+```bash
+# 1. Clone the repository
+git clone <repository-url>
+cd Law-GPT
+
+# 2. Configure API keys
+cp .env.example .env
+# Edit .env with your Indian Kanoon API key and other credentials
+
+# 3. Deploy with one command
+./deploy.sh  # Linux/macOS
+# OR
+.\deploy.ps1  # Windows
+
+# 4. Access your application
+# Main app: http://localhost
+# API: http://localhost:8000
+```
+
+For detailed deployment instructions, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
 
 ## Local Development Setup
 
