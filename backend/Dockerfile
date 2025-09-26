@@ -58,4 +58,5 @@ EXPOSE 8000
 #   CMD curl -f http://localhost:${PORT:-8000}/health || exit 1
 
 # Use PORT environment variable provided by Render, fallback to 8000
-CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
+# Start with single worker for stability, can be increased in production
+CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000} --workers 1
