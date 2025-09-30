@@ -25,9 +25,18 @@ elif DATABASE_URL.startswith('postgres://'):
 
 try:
     engine = create_engine(DATABASE_URL)
-    # Test the connection
+    # Test the connection and enable pgvector extension for PostgreSQL
     with engine.connect() as conn:
         conn.execute(text("SELECT 1"))
+        # Enable pgvector extension if using PostgreSQL
+        if not DATABASE_URL.startswith('sqlite'):
+            try:
+                conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
+                conn.commit()
+                print("✅ pgvector extension enabled")
+            except Exception as e:
+                print(f"⚠️  Could not enable pgvector extension: {e}")
+                print("   This may require superuser privileges on the database")
     print(f"✅ Database connected successfully: {DATABASE_URL.split('@')[0]}@***")
 except Exception as e:
     print(f"❌ Database connection failed: {e}")
