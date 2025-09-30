@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config/api';
 
 // Define API base URL
-const API_BASE = '/api';
+const API_BASE = API_BASE_URL;
 
 const Profile: React.FC = () => {
   const navigate = useNavigate();

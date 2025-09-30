@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config/api';
 
-const API_BASE = '/api';
+const API_BASE = API_BASE_URL;
 
 interface ChatSession {
   id: number;

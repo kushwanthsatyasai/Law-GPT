@@ -7,8 +7,8 @@ const getApiBaseUrl = (): string => {
   
   // Check if we're in production (Netlify)
   if (import.meta.env.PROD) {
-    // In production, API calls will be proxied through Netlify redirects
-    return window.location.origin;
+    // In production, use Render backend
+    return 'https://law-gpt-backend-gr62.onrender.com';
   }
   
   // Development fallback

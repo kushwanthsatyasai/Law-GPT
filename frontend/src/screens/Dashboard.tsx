@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config/api';
 
-const API_BASE = '/api';
+const API_BASE = API_BASE_URL;
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
