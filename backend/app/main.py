@@ -27,14 +27,14 @@ genai.configure(api_key=settings.GOOGLE_API_KEY)
 app = FastAPI(title="Law GPT Backend", version="0.1.0")
 
 # CORS configuration
-# For production, update with your Vercel frontend URL
+# Updated for Netlify deployment
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:5174",
-        "https://*.vercel.app",  # Allow all Vercel deployments
-        "*",  # Remove this in production for better security
+        "https://*.netlify.app",  # Allow all Netlify deployments
+        "*",  # Allows all origins - works but less secure
     ],
     allow_methods=["*"],
     allow_headers=["*"],
