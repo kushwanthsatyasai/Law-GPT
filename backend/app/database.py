@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 from .config import settings
 import os
@@ -27,7 +27,7 @@ try:
     engine = create_engine(DATABASE_URL)
     # Test the connection
     with engine.connect() as conn:
-        conn.execute("SELECT 1")
+        conn.execute(text("SELECT 1"))
     print(f"✅ Database connected successfully: {DATABASE_URL.split('@')[0]}@***")
 except Exception as e:
     print(f"❌ Database connection failed: {e}")

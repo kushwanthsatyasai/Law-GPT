@@ -11,7 +11,7 @@ from .ingest import extract_text_from_pdf, extract_text_from_image
 class DocumentAnalyzer:
     def __init__(self):
         genai.configure(api_key=settings.GOOGLE_API_KEY)
-        self.model = genai.GenerativeModel("gemini-1.5-flash")
+        self.model = genai.GenerativeModel("gemini-2.0-flash")
         
         # Common legal clause patterns
         self.clause_patterns = {

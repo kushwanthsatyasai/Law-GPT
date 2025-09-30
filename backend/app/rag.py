@@ -65,7 +65,7 @@ def embed_query(question: str) -> List[float]:
 
 def answer_with_citations(question: str, hits: List[Tuple[Chunk, float]]) -> Tuple[str, str]:
     context = "\n\n".join([h[0].text for h in hits]) or "No context"
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash")
     prompt = (
         "Answer the legal question using the context.\n\n"
         f"Question:\n{question}\n\nContext:\n{context}\n\n"

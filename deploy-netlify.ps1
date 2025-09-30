@@ -24,7 +24,7 @@ try {
 # Validate backend URL
 if ($BackendUrl -notmatch '^https?://') {
     Write-Host "❌ Backend URL must start with http:// or https://" -ForegroundColor Red
-    Write-Host "   Example: https://your-app.railway.app" -ForegroundColor Yellow
+    Write-Host "   Example: https://law-gpt-backend-gr62.onrender.com" -ForegroundColor Yellow
     exit 1
 }
 
@@ -36,7 +36,7 @@ Write-Host "   Skip Build: $($SkipBuild ? 'Yes' : 'No')" -ForegroundColor White
 # Update netlify.toml with backend URL
 Write-Host "📝 Updating netlify.toml configuration..." -ForegroundColor Blue
 $netlifyConfig = Get-Content "netlify.toml" -Raw
-$netlifyConfig = $netlifyConfig -replace "https://your-backend-url\.railway\.app", $BackendUrl
+$netlifyConfig = $netlifyConfig -replace "https://law-gpt-backend-gr62.onrender.com", $BackendUrl
 Set-Content "netlify.toml" $netlifyConfig
 
 # Check if user is logged in to Netlify

@@ -30,10 +30,14 @@ services:
         sync: false
       - key: KANOON_DEV_API_KEY
         sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: law-gpt-postgres
+          property: connectionString
 
-  - type: pserv
-    name: law-gpt-database
+databases:
+  - name: law-gpt-postgres
+    databaseName: lawgpt
+    user: lawgpt
     plan: free
     region: oregon
-    databaseName: lawgpt
-    databaseUser: lawgpt

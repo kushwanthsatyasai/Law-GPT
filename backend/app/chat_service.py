@@ -21,7 +21,7 @@ genai.configure(api_key=settings.GOOGLE_API_KEY)
 
 class ChatService:
     def __init__(self):
-        self.model = genai.GenerativeModel("gemini-1.5-flash")
+        self.model = genai.GenerativeModel("gemini-2.0-flash")
         self.legal_db_service = LegalDatabaseService()
         self.indian_legal_db_service = IndianLegalDatabaseService()
         self.document_analyzer = DocumentAnalyzer()

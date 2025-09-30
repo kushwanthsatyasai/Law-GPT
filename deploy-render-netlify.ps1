@@ -170,7 +170,7 @@ if ($RenderUrl) {
 
 Write-Host "📋 Next Steps:" -ForegroundColor Cyan
 Write-Host "   1. Test all application features" -ForegroundColor White
-Write-Host "   2. Set up custom domains (optional)" -ForegroundColor White
+Write-Host "   2. Set up custom domains" -ForegroundColor White
 Write-Host "   3. Monitor logs and performance" -ForegroundColor White
 Write-Host "   4. Configure production API keys" -ForegroundColor White
 Write-Host ""

@@ -16,7 +16,7 @@ genai.configure(api_key=settings.GOOGLE_API_KEY)
 
 class IndianLegalDatabaseService:
     def __init__(self):
-        self.model = genai.GenerativeModel("gemini-1.5-flash")
+        self.model = genai.GenerativeModel("gemini-2.0-flash")
         
         # Indian legal database APIs
         self.legal_apis = {
